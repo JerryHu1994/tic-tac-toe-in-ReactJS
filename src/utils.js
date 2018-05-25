@@ -1,12 +1,10 @@
-import React from 'react';
-
 /* 
   This function checks if the game is over by verifying if the 
   lastMove caused winning the game. If the game is over, it will
-  return a hash contains a winning flag and a winning row. Otherwise 
+  return a hash contains a winning flag and a winning row array. Otherwise 
   it will return a not-winning flag.
 */
-export function gameOver(squares, lastMove) {
+export function checkGameOver(squares, lastMove) {
   const length = 3;
   if (lastMove == null) {
     return false;
@@ -14,8 +12,8 @@ export function gameOver(squares, lastMove) {
     var symbol = squares[lastMove];  
   }
   
+  /* check if the horizontal row is filled by the same element */
   const horiStart = length*Math.floor(lastMove/length);
-  // check if the horizontal row is filled by the same element
   var flag = true;
   var winningRow = [];
   for (let i = 0; i < length; i++) {
@@ -35,7 +33,8 @@ export function gameOver(squares, lastMove) {
       row : winningRow
     };
   }
-  // check if the vertical row is filled by the same element
+
+  /* check if the vertical row is filled by the same element */
   const vertiStart = lastMove%length;
   flag = true;
   for (let i = 0; i < length; i++) {
@@ -55,8 +54,12 @@ export function gameOver(squares, lastMove) {
       row : winningRow
     };
   }
-  // check if the lastMove is on diagonal line
-  if (horiStart === vertiStart) {
+
+
+  /* check if the lastMove is on diagonal line */
+  var xidx = lastMove%length;
+  var yidx = Math.floor(lastMove/length);
+  if (xidx === yidx) {
     // top left to bottom right
     flag = true;
     for (let i=0; i<length; i++){
@@ -75,10 +78,14 @@ export function gameOver(squares, lastMove) {
         row : winningRow
       };
     }
+
+  }
+
+  if ((xidx+yidx) === length-1) {
     // top right to bottom left
     flag = true;
     for (let i=0; i<length; i++){
-      if (squares[i*length+length-1-i]) {
+      if (squares[i*length+length-1-i] !== symbol) {
         flag = false;
         break;
       }

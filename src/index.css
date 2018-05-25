@@ -40,12 +40,72 @@ ol, ul {
   /*background: #ddd;*/
 }
 
-.game {
-  display: flex;
-  flex-direction: row;
+.title {
+  display: block;
+  left: 26%;
+  position: absolute;
+  font-family: "Arial Black";
+  font-size: 40px;
 }
 
-.game-info {
-  margin-left: 20px;
+.game-status {
+  display: block;
+  float: left;
+  clear:left;
+  position: absolute;
+  left: 27%;
+  top: 50%;
+  font-size: 25px;
+  height: 30%;
+  width: 300px;
+  text-align: center;
+}
+
+.game-board{
+  display: block;
+  float: left;
+  clear:left;
+  position: absolute;
+  left: 30%;
+  top: 20%;
+}
+
+.game-info{
+  display: block;
+  float: left;
+  clear:left;
+  position: absolute;
+  left: 70%;
+  bottom: 40%;
+  font-size: 20px;
+}
+.game {
+  display: block;
+  float: left;
+  /*display: flex;*/
+  /*flex-direction: ro;w;*/
+
+}
+.restart {
+  display: block;
+  clear:left;
+  position: absolute;
+  width: 80%;
+  height: 20%;
+  top: 30%;
+  left:25%;
+}
+
+.restartButton {
+  display: block;
+  clear:left;
+  width: 50%;
+  height: 60%;
+  font-size: 15px;
+  text-align: center;
+}
+
+.historyButton {
+  font-size: 20px;
 }
 

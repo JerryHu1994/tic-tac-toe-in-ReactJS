@@ -14,7 +14,7 @@ class Board extends React.Component {
     />);
   }
 
-  // render the board
+  // render the entire board
   render() {
     var matrix = [];
     var count = 0;
@@ -31,8 +31,6 @@ class Board extends React.Component {
       }
       matrix.push(<div>{row}</div>);
     }
-
-
     return (
       <div>
         {matrix}
