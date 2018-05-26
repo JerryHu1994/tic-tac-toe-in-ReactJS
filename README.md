@@ -11,3 +11,5 @@ To start the game, run:
 ```
 npm start
 ```
+
+Open a browser, type in http://localhost:3000/ inside the address bar, the game should show up.
