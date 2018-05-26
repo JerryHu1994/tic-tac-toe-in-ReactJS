@@ -7,6 +7,12 @@ node -v
 ```
 It should print the version of NodeJs installed on your machine.
 
+Stay in the project folder and install all missing npm modules for this project by:
+```
+npm install npm-install-missing
+```
+Then you are good to go !
+
 To start the game, run:
 ```
 npm start
