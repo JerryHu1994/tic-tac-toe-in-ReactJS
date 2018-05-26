@@ -11,6 +11,7 @@ class Board extends React.Component {
       value={this.props.squares[i]} 
       onClick={() => this.props.onClick(i)}
       color = {color}
+      key = {i}
     />);
   }
 
@@ -19,9 +20,11 @@ class Board extends React.Component {
     var matrix = [];
     var count = 0;
     var winningRow = this.props.extraRender;
-    for (let idx=0; idx<3; idx++){
+    var gridSize = this.props.currGridSize;
+
+    for (let idx=0; idx<gridSize; idx++){
       var row = [];
-      for (let j=0; j<3; j++){
+      for (let j=0; j<gridSize; j++){
         if (winningRow != null && winningRow.includes(count)) {
           row.push(this.renderSquare(count, "red"));
         } else {
@@ -29,7 +32,7 @@ class Board extends React.Component {
         }
         count++;
       }
-      matrix.push(<div>{row}</div>);
+      matrix.push(<div key={idx}>{row}</div>);
     }
     return (
       <div>

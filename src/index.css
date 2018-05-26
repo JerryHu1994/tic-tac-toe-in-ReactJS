@@ -42,9 +42,10 @@ ol, ul {
 
 .title {
   display: block;
-  left: 26%;
+  left: 28%;
+  top: 10%;
   position: absolute;
-  font-family: "Arial Black";
+  font-family: "Arial";
   font-size: 40px;
 }
 
@@ -75,16 +76,13 @@ ol, ul {
   float: left;
   clear:left;
   position: absolute;
-  left: 70%;
+  left: 60%;
   bottom: 40%;
   font-size: 20px;
 }
 .game {
   display: block;
   float: left;
-  /*display: flex;*/
-  /*flex-direction: ro;w;*/
-
 }
 .restart {
   display: block;
@@ -107,5 +105,28 @@ ol, ul {
 
 .historyButton {
   font-size: 20px;
+}
+
+.checkBox {
+  clear: left;
+  float: left;
+  margin-top: .5em;
+}
+.sizeButton{
+  clear: left;
+  float: left;
+  margin-top: 1em;
+  width: 50%;
+  height: 10%;
+}
+
+.checkbox-list{
+  display: block;
+  clear:left;
+  position: absolute;
+  left:5%;
+  top:30%;
+  font-size: 20px;
+  height: 30%;
 }
 

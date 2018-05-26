@@ -4,8 +4,8 @@
   return a hash contains a winning flag and a winning row array. Otherwise 
   it will return a not-winning flag.
 */
-export function checkGameOver(squares, lastMove) {
-  const length = 3;
+export function checkGameOver(squares, lastMove, gridSize) {
+  const length = gridSize;
   if (lastMove == null) {
     return false;
   } else {
